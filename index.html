@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Personal Portfolio Website</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/ae0f3c286a.js" ></script>
+    </head>
+    <body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <!-- <li><a href="#">Services</a></li> -->
+                    <li><a href="#Portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h3>UI/UX Designer | Web Developer</h3>
+                <h1>Hi, I'm <br><span>Wathsala Suriyanpola</span><br></h1><h2>From Sri Lanka</h2>
+            </div>
+        </div>
+    </div>
+    <!-------------------about-------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hi there! I'm currently an undergraduate at the University of Sri Jayewardenepura, 
+                        focusing on UI/UX design and web development. 
+                        I'm passionate about creating user-friendly interfaces and 
+                        crafting websites that offer seamless experiences. 
+                        Utilizing tools like Figma for design, along with HTML, CSS, JavaScript, and various 
+                        frameworks for development, I bring my designs to life. My goal is to keep learning 
+                        and contributing to projects that improve user experiences and drive innovation.
+
+                    </p>
+
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                                <li><span>Web Development</span><br>Web App Development</li>
+                                <!-- <li><span>QA</span><br>Manual/Automation Testing</li> -->
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2021-2024</span><br>BSc (hons) Information Technology</li>
+                                <li><span>2020</span><br>NAITA - Information & Communication Technology Technition</li>
+                                <li><span>2017-2019</span><br>Thambuttegama Central Collage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- -----------------------Services---------------- -->
+
+        <div id="Portfolio">
+            <div class="container">
+                <h1 class="sub-title">My Work</h1>
+                <div class="work-list">
+                    <div class="work">
+                        <img src="images//work1.png" alt="">
+                        <div class="layer">
+                            <h3>Food Restaurant App</h3>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="images/work2.jpg" alt="">
+                        <div class="layer">
+                            <h3>Music App</h3>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="images/works3.jpg" alt="">
+                        <div class="layer">
+                            <h3>Pizza App</h3>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+<!-------------------contact-------------------->
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p><i class="fa-solid fa-paper-plane"></i>wathsalaksuriyanpola2000@gmail.com</p>
+                        <p><i class="fa-solid fa-phone"></i>0779279970</p>
+                        <div class="social-icons">
+                            <a href=""><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/wathsala-suriyanpola-0ab004239"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/Wathsala970"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                        <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+                    </div>
+                    <div class="contact-right">
+                        <form name="submit-to-google-sheet">
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="text" name="Email" placeholder="Your Email" required>
+                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                            <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                        <span id="msg"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright @ Wathsala</p>
+            </div>
+        </div>
+
+        <script>
+
+            var tablinks = document.getElementsByClassName('tab-links');
+            var tabcontents = document.getElementsByClassName('tab-contents');
+            
+            function opentab(tabname) {
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+
+        </script>
+
+        <script>
+            var sidemenu = document.getElementById('sidemenu');
+
+            function openmenu(){
+                sidemenu.style.right = "0";
+            }
+            function closemenu(){
+                sidemenu.style.right = "-200px";
+            }
+        </script>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzwE7RacZv46OH9MS-uVeeFXO3fMXN5-NM-awKv8xYZjeL2hIMdYWMho_yTvrrkB1Xq/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg = document.getElementById('msg');
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "Message sent Successfully"
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    },5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+    </body>
+</html>
